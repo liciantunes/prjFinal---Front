@@ -1,0 +1,32 @@
+    .file-upload {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+        padding: 10px 20px;
+        background-color: #172463; /* Cor de fundo */
+        color: white; /* Cor do texto */
+        border: none; /* Sem borda */
+        border-radius: 4px; /* Bordas arredondadas */
+        text-align: center; /* Centraliza o texto */
+    }
+
+    .file-upload input[type="file"] {
+        display: none; /* Oculta o input padrão */
+    }
+
+    .file-upload i {
+        margin-right: 8px; /* Espaço entre ícone e texto */
+    }
+
+    .file-upload:hover {
+        background-color: #172463; /* Cor ao passar o mouse */
+    }
+  
+      &:hover{
+  
+        background-position: 0 -100%;
+  
+        color:#2590EB;
+  
+      }
+  

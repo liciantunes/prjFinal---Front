@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodBarra Payment Modal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            /* Cor de fundo da página */
+        }
+
+        /* Estilos do Modal */
+        .modal {
+            display: block;
+            /* Mostrar o modal automaticamente */
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.6);
+            /* Fundo semi-transparente escuro */
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            background-color: #ffffff;
+            /* Cor de fundo do modal */
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #172463;
+            /* Cor da borda */
+            width: 80%;
+            max-width: 600px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .close {
+            color: #172463;
+            /* Cor do ícone de fechar */
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #0f1b44;
+            /* Tom mais escuro ao passar o mouse */
+            text-decoration: none;
+        }
+
+        /* Estilos do QR Code */
+        #qrcode {
+            margin-top: 20px;
+            max-width: 50%;
+            /* Garante que a imagem não ultrapasse o contêiner */
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- O Modal -->
+    <div id="qrModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span><br><br>
+            <h3>Pagamento em andamento... Logo sera confirmado via email!!</h3>
+        </div>
+    </div>
+
+    <script>
+        window.onload = function () {
+            // Fechar o modal quando clicar no X
+            document.querySelector('.close').addEventListener('click', function () {
+                document.getElementById('qrModal').style.display = 'none';
+                window.location.href = 'index.html'; // Redirecionar para a página inicial
+            });
+
+            // Fechar o modal quando clicar fora da área do modal
+            window.onclick = function (event) {
+                if (event.target === document.getElementById('qrModal')) {
+                    document.getElementById('qrModal').style.display = 'none';
+                    window.location.href = 'index.html'; // Redirecionar para a página inicial
+                }
+            };
+        };
+    </script>
+
+</body>
+
+</html>
